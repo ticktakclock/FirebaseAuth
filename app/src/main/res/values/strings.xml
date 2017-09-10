@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FirebaseAuth</string>
+    <string name="auth_failed">認証失敗しました</string>
+    <string name="signUp">sign up</string>
+    <string name="signIn">sign in</string>
+    <string name="signOut">sign out</string>
+</resources>
