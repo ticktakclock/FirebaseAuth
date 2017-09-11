@@ -1,8 +1,11 @@
 package com.github.ticktakclock.firebaseauth
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -48,7 +51,6 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid())
                 loginNameTv.setText("signed in")
                 isSignedIn = true
-
             } else {
                 // User is signed out
                 Log.d(TAG, "onAuthStateChanged:signed_out")
@@ -77,6 +79,26 @@ class MainActivity : AppCompatActivity() {
         signOutBtn.setOnClickListener { v ->
             signOut()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menu?.add(R.string.signInWithGoogle)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item == null) return false
+
+        when (item.itemId) {
+            0 -> { // sign in with google
+                startFirebaseGoogleSignInActivity()
+            }
+            else -> {
+                return false
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onStart() {
@@ -148,5 +170,9 @@ class MainActivity : AppCompatActivity() {
         signInBtn.visibility = if (isSignedIn) View.GONE else View.VISIBLE
         signUpBtn.visibility = if (isSignedIn) View.GONE else View.VISIBLE
         signOutBtn.visibility = if (!isSignedIn) View.GONE else View.VISIBLE
+    }
+
+    private fun startFirebaseGoogleSignInActivity() {
+        startActivity(Intent().setClass(this, FirebaseSignInActivity::class.java))
     }
 }
