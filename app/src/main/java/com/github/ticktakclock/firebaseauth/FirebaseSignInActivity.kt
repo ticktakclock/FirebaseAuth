@@ -1,8 +1,8 @@
 package com.github.ticktakclock.firebaseauth
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
@@ -48,6 +48,9 @@ class FirebaseSignInActivity : AppCompatActivity(), GoogleApiClient.OnConnection
         Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show()
     }
 
+    /**
+     * setup layout behavior
+     * */
     private fun setUpUI() {
         signInButton.setOnClickListener { v ->
             if (mAuth.currentUser != null) {
@@ -58,6 +61,9 @@ class FirebaseSignInActivity : AppCompatActivity(), GoogleApiClient.OnConnection
         }
     }
 
+    /**
+     * update layout text or visible
+     * */
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             loginNameTv.setText("signed in")

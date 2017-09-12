@@ -18,7 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FirebaseSignInActivity"></activity>
+        <activity android:name=".FirebaseSignInActivity" />
+        <activity android:name=".EmailSignInActivity" />
+        <activity android:name=".FirebaseStorageActivity" />
     </application>
 
 </manifest>
