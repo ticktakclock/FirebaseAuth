@@ -18,11 +18,13 @@ class MainActivity : AppCompatActivity() {
 
     private val classes = arrayOf(
             FirebaseSignInActivity::class.java,
-            EmailSignInActivity::class.java
+            EmailSignInActivity::class.java,
+            FirebaseStorageActivity::class.java
     )
     private val descriptions = arrayOf(
             "using google sign in",
-            "using email sign in"
+            "using email sign in",
+            "firebase storage"
     )
 
     private val contentList: ListView by bindView(R.id.activity_main_content_lv)

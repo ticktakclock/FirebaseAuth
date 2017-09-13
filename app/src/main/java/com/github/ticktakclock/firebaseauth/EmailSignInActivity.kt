@@ -47,6 +47,7 @@ class EmailSignInActivity : AppCompatActivity() {
             }
         }
         setUpUI()
+        updateUI(mAuth.currentUser)
     }
 
     /**
@@ -81,7 +82,7 @@ class EmailSignInActivity : AppCompatActivity() {
         signUpBtn.visibility = if (user != null) View.GONE else View.VISIBLE
         signOutBtn.visibility = if (user == null) View.GONE else View.VISIBLE
 
-        loginNameTv.setText(if (user != null) "please sign in" else "signed in")
+        loginNameTv.setText(if (user == null) "please sign in" else "signed in")
     }
 
     override fun onStart() {

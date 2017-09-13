@@ -41,6 +41,7 @@ class FirebaseSignInActivity : AppCompatActivity(), GoogleApiClient.OnConnection
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build()
         setUpUI()
+        updateUI(mAuth.currentUser)
     }
 
     override fun onConnectionFailed(connectionResult: ConnectionResult) {
