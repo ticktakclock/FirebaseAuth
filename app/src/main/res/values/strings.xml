@@ -5,4 +5,6 @@
     <string name="signIn">sign in</string>
     <string name="signOut">sign out</string>
     <string name="signInWithGoogle">signInWithGoogle</string>
+    <string name="download">download</string>
+    <string name="upload">upload</string>
 </resources>
