@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
-import butterknife.bindView
+import kotterknife.bindView
 
 
 class MainActivity : AppCompatActivity() {
