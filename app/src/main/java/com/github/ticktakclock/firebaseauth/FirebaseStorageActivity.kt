@@ -14,11 +14,11 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
-import butterknife.bindView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import kotterknife.bindView
 import java.io.ByteArrayOutputStream
 
 class FirebaseStorageActivity : AppCompatActivity() {
